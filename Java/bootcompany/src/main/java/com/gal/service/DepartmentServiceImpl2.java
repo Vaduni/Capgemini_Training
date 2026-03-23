@@ -21,7 +21,6 @@ public class DepartmentServiceImpl2 implements DepartmentService {
     @Autowired
     DepartmentRepository departmentRepository;
 
-    @Override
     public Department find(int departmentId) {
 
         Optional<Department> op =

@@ -31,6 +31,16 @@ public class DepartmentController {
 
 	        return mapper.writeValueAsString(error);
 	}
+	@ExceptionHandler(DepartmentNotFoundException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public Map<String, Object> handleNotFound(DepartmentNotFoundException e) {
+
+	    Map<String, Object> error = new HashMap<>();
+	    error.put("message", e.getMessage());
+	    error.put("code", 404);
+
+	    return error;
+	}
 	//private static final Logger Log =LoggerFactory.getLogger("com.gal");
 	private static final Logger Log =LoggerFactory.getLogger(DepartmentController.class);
     @Autowired
@@ -40,7 +50,7 @@ public class DepartmentController {
     //department?id=10
     @GetMapping
     public Department getDepartmentById(@RequestParam("id") int id) {
-       Department department= departmentService.find(id);
+    	  Department department = departmentService.find(id);
 	   return department;
     }
 

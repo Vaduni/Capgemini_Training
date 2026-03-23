@@ -30,7 +30,7 @@ public class BootcompanyApplication {
         d1.setDepname("CS");
 
         deptService.addDepartment(d1);
-        System.out.println(deptService.find(101));
+        System.out.println(deptService.find(101)); 
         deptService.findAll().forEach(System.out::println);
 
         Department updateDept = new Department();

@@ -22,7 +22,16 @@ public class Department {
     private Integer managerid;
     @Column(name = "established_date")
     private Date establishedDate;
-    public Date getEstablishedDate() {
+    public Department() {
+		
+	}
+    public Department(int departmentid, String depname, int managerId, Date establishedDate) {
+        this.departmentid = departmentid;
+        this.depname = depname;
+        this.managerid = managerid;
+        this.establishedDate = establishedDate;
+    }
+	public Date getEstablishedDate() {
         return establishedDate;
     }
     public void setEstablishedDate(Date date) {

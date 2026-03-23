@@ -16,7 +16,6 @@ public class DepartmentServiceImpl implements DepartmentService {
         this.departmentDao = departmentDao;
     }
 
-    @Override
     public Department find(int departmentId) {
         return departmentDao.find(departmentId);
     }

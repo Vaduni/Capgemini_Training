@@ -6,7 +6,7 @@ import com.gal.model.Department;
 
 public interface DepartmentService {
 
-    Department find(int departmentId);
+   Department find(int departmentId);
 
     List<Department> findAll();
 
